@@ -1,5 +1,7 @@
-public class Reporte2DTO extends ReporteDTO{
-    private int año;
+import java.io.Serializable;
+
+public class Reporte2DTO extends ReporteDTO implements Serializable {
+    private int anio;
 
    public Reporte2DTO(int personaId, long cantPagRevisadas) {
        super(personaId, cantPagRevisadas);
