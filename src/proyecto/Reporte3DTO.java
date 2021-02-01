@@ -1,4 +1,6 @@
-public class Reporte3DTO extends ReporteDTO{
+import java.io.Serializable;
+
+public class Reporte3DTO extends ReporteDTO implements Serializable {
 
     public Reporte3DTO(int personaId, long cant) {
         super(personaId, cant);

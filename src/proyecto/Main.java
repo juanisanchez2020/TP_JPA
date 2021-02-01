@@ -3,20 +3,30 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        //Crea el Entity manager factory con la configuración
-        //llamada editorial
-
-        Reporte1DAO reporte1 = new Reporte1DAO();
-        List<Reporte1DTO> reporte1DTOs = reporte1.reporte1(2017);
+        ReporteDAO reporte1 = new ReporteDAO();
+        List<Reporte1DTO> reporte1DTOs = reporte1.reporte1DTOs(2017);
         reporte1DTOs.forEach(r -> System.out.println(r));
 
-        Reporte2DAO reporte2 = new Reporte2DAO();
-        List<Reporte2DTO> reporte2DTOs = reporte2.reporte2(2017);
+        ReporteDAO reporte2 = new ReporteDAO();
+        List<Reporte2DTO> reporte2DTOs = reporte2.reporte2DTOs(2017);
         reporte2DTOs.forEach(r -> System.out.println(r));
 
-        Reporte3DAO reporte3 = new Reporte3DAO();
-        List<Reporte3DTO> reporte3DTOs = reporte3.reporte3();
+        ReporteDAO reporte3 = new ReporteDAO();
+        List<Reporte3DTO> reporte3DTOs = reporte3.reporte3DTOs();
         reporte3DTOs.forEach(r -> System.out.println(r));
+    }
+
+//        Reporte1DAO reporte1 = new Reporte1DAO();
+//        List<Reporte1DTO> reporte1DTOs = reporte1.reporte1(2017);
+//        reporte1DTOs.forEach(r -> System.out.println(r));
+//
+//        Reporte2DAO reporte2 = new Reporte2DAO();
+//        List<Reporte2DTO> reporte2DTOs = reporte2.reporte2(2017);
+//        reporte2DTOs.forEach(r -> System.out.println(r));
+//
+//        Reporte3DAO reporte3 = new Reporte3DAO();
+//        List<Reporte3DTO> reporte3DTOs = reporte3.reporte3();
+//        reporte3DTOs.forEach(r -> System.out.println(r));
 
 //        List<Reporte2DTO> reporte2 = new Reporte2DAO().reporte2();
 //        reporte2.forEach(r -> System.out.println(r));
@@ -128,5 +138,5 @@ public class Main {
 //        em.getTransaction().commit();
 //        em.close();
 //        emf.close();
-    }
+//    }
 }

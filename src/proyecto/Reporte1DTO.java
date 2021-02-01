@@ -11,9 +11,17 @@ public class Reporte1DTO extends ReporteDTO implements Serializable {
         super();
     }
 
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
     @Override
     public String toString() {
-        return "Reporte1DTO [personaId=" + getPersonaId() +
-                ", Cantidad de libros editados en año=" + getCant() + "]";
+        return "Reporte1 [personaId=" + getPersonaId() +
+                ", Cantidad de libros editados= " + getCant() + "]";
     }
 }
