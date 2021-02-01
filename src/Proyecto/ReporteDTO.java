@@ -8,6 +8,10 @@ public class ReporteDTO {
         this.cant = cant;
     }
 
+    public ReporteDTO() {
+        super();
+    }
+
     public int getPersonaId() {
         return personaId;
     }

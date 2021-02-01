@@ -23,9 +23,12 @@ public class Capitulo {
     @ManyToOne          // Un libro puede tener muchos capitulos, un capitulo puede tener un SOLO LIBRO
     private Libro libro;
 
-    public Capitulo() {}
+    public Capitulo() {
+        super();
+    }
 
     public Capitulo(int id, String titulo, int paginas, Persona revisor, List<Persona> autores, Libro libro) {
+        super();
         this.id = id;
         this.titulo = titulo;
         this.paginas = paginas;

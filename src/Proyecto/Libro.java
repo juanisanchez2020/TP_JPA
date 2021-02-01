@@ -22,9 +22,12 @@ public class Libro {
     @OneToMany(mappedBy = "libro")          //El mapeo lo tiene el capitulo.
     private List<Capitulo> capitulos = new ArrayList<>();
 
-    public Libro() {}
+    public Libro() {
+        super();
+    }
 
     public Libro(int id, String nombre, int anio, List<Persona> editores) {
+        super();
         this.id = id;
         this.nombre = nombre;
         this.anio = anio;

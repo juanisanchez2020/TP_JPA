@@ -17,12 +17,11 @@ public class Persona {
     private String mail;
 
     public Persona(){
-        this.nombre = null;
-        this.apellido = null;
-        this.mail = "";
+        super();
     }
 
     public Persona(int id, String nombre, String apellido, String mail) {
+        super();
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
