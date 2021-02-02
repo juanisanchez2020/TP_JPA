@@ -5,6 +5,9 @@
 
     <persistence-unit name="Editorial">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>Persona</class>
+        <class>Libro</class>
+        <class>Capitlo</class>
 
         <properties>
 
