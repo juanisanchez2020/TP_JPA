@@ -2,13 +2,13 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         ReporteDAO reporte1 = new ReporteDAO();
         List<Reporte1DTO> reporte1DTOs = reporte1.reporte1DTOs(2017);
         reporte1DTOs.forEach(r -> System.out.println(r));
 
         ReporteDAO reporte2 = new ReporteDAO();
-        List<Reporte2DTO> reporte2DTOs = reporte2.reporte2DTOs(2017);
+        List<Reporte2DTO> reporte2DTOs = reporte2.reporte2DTOs(2018);
         reporte2DTOs.forEach(r -> System.out.println(r));
 
         ReporteDAO reporte3 = new ReporteDAO();
