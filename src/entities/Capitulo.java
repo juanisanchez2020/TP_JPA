@@ -6,15 +6,15 @@ import javax.persistence.*;
 public class Capitulo {
     @Id
     private int id;
-    @Column
+    @Column(name = "titulo")
     private String titulo;
-    @Column
+    @Column(name = "paginas")
     private int paginas;
-    @ManyToOne          //Un capitulo puede tener un revisor, Un revisor puede revisar Muchos capitulos.
+    @ManyToOne
     private Persona revisor;
-    @ManyToMany         //Un autor pudo haber escrito muchos capitulos - Un capitulo puede tener muchos autores
+    @ManyToMany
     private List<Persona> autores = new ArrayList<>();
-    @ManyToOne          // Un libro puede tener muchos capitulos, un capitulo puede tener un SOLO LIBRO
+    @ManyToOne
     private Libro libro;
 
     public Capitulo() {
@@ -67,5 +67,14 @@ public class Capitulo {
         this.libro = libro;
     }
 
-
+    @Override
+    public String toString() {
+        return "Capitulo{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", paginas=" + paginas +
+                ", revisor=" + revisor +
+                ", libro=" + libro +
+                '}';
+    }
 }

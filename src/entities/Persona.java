@@ -1,7 +1,5 @@
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -9,9 +7,9 @@ public class Persona {
 
     @Id
     private int id;
-    @Column
+    @Column(name = "nombre")
     private String nombre;
-    @Column
+    @Column(name = "apellido")
     private String apellido;
     @Column(nullable = false)
     private String mail;
@@ -54,5 +52,15 @@ public class Persona {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", mail='" + mail + '\'' +
+                '}';
     }
 }

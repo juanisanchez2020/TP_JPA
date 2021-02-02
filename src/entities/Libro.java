@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -13,13 +11,13 @@ public class Libro {
 
     @Id
     private int id;
-    @Column
+    @Column(name = "nombre")
     private String nombre;
-    @Column
+    @Column(name = "anio")
     private int anio;
     @ManyToMany
     private List<Persona> editores = new ArrayList<>();
-    @OneToMany(mappedBy = "libro")          //El mapeo lo tiene el capitulo.
+    @OneToMany(mappedBy = "libro")
     private List<Capitulo> capitulos = new ArrayList<>();
 
     public Libro() {
@@ -52,5 +50,14 @@ public class Libro {
 
     public void setAnio(int anio) {
         this.anio = anio;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", anio=" + anio +
+                '}';
     }
 }

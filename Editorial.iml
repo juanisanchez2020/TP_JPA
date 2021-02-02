@@ -9,7 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/proyecto" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/dao" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/db" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/database" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/dto" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/entities" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />

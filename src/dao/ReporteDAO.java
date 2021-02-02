@@ -11,7 +11,7 @@ public class ReporteDAO{
 
         try{
             em = Conexion.createEntityManager();
-//            iniciarConexion();
+            em.getTransaction().begin();
             TypedQuery<Reporte1DTO> q = em.
                     createQuery("SELECT new "
                                     + "Reporte1DTO(p.id, count(*))"
@@ -21,13 +21,14 @@ public class ReporteDAO{
                             Reporte1DTO.class);
             q.setParameter("anio", anio);
             return q.getResultList();
-        }catch (Exception e) {
-            throw e;
-        }finally {
-            em.close();
-            Conexion.closeEMF();
-            System.out.println("Se cierra la conexion");
-//            finalizarConexion();
+        } catch (Exception e) {
+            throw new Exception("¡ Ocurrió un error ! " + e.getCause());
+        } finally {
+            if(em != null){
+                em.getTransaction().commit();
+                em.close();
+                Conexion.closeEMF();
+            }
         }
     }
 
@@ -35,8 +36,8 @@ public class ReporteDAO{
         EntityManager em = null;
 
         try {
-//            iniciarConexion();
             em = Conexion.createEntityManager();
+            em.getTransaction().begin();
             TypedQuery<Reporte2DTO> q2 = em.
                     createQuery("SELECT new "
                                     + "Reporte2DTO(p.id, sum(c.paginas))"
@@ -47,13 +48,14 @@ public class ReporteDAO{
                             Reporte2DTO.class);
             q2.setParameter("anio", anio);
             return q2.getResultList();
-        }catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }finally {
-            em.close();
-            Conexion.closeEMF();
-            System.out.println("Se cierra la conexion");
-//            finalizarConexion();
+        } catch (Exception e) {
+            throw new Exception("¡ Ocurrió un error ! " + e.getCause());
+        } finally {
+            if(em != null){
+                em.getTransaction().commit();
+                em.close();
+                Conexion.closeEMF();
+            }
         }
     }
 
@@ -61,23 +63,23 @@ public class ReporteDAO{
         EntityManager em = null;
 
         try {
-//            iniciarConexion();
             em = Conexion.createEntityManager();
+            em.getTransaction().begin();
             TypedQuery<Reporte3DTO> q3 = em.
                     createQuery("SELECT new "
-                                    + "Reporte3DTO(p.id, count(*))"
-                                    + " FROM Libro l JOIN l.capitulos c"
-                                    + " JOIN c.autores p"
-                                    + " GROUP BY p.id ",
+                                    + "Reporte3DTO(p.id, count(distinct c.libro))"
+                                    + " FROM Capitulo c JOIN c.autores p"
+                                    + " GROUP BY p.id",
                             Reporte3DTO.class);
             return q3.getResultList();
-        }catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }finally {
-            em.close();
-            Conexion.closeEMF();
-            System.out.println("Se cierra la conexion");
-//            finalizarConexion();
+        } catch (Exception e) {
+            throw new Exception("¡ Ocurrió un error ! " + e.getCause());
+        } finally {
+            if(em != null){
+                em.getTransaction().commit();
+                em.close();
+                Conexion.closeEMF();
+            }
         }
     }
 }
